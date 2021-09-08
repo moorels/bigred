@@ -23,30 +23,14 @@ const HeadzLayout = ({ children }) => {
               >
                 <path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path>
               </svg>
-              <span className="ml-3 text-xl ">Password Safe</span>
+              <Link to={routes.homepage()}>
+                <span className="ml-3 text-xl ">Password Safe</span>
+              </Link>
             </div>
             <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l   md:border-gray-400 	flex flex-wrap items-center text-base justify-center">
               <ul>
                 <li>
                   <div className="space-x-1 ">
-                    <Link
-                      className=" p-2 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700 "
-                      to={routes.homepage()}
-                    >
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-100">
-                        <span className=" animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-100 opacity-75"></span>
-                      </span>
-                      <span> Home</span>
-                    </Link>
-                    {/* <Link
-                      className="p-2 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700"
-                      to={routes.about()}
-                    >
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-100">
-                        <span className=" animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-100 opacity-75"></span>
-                      </span>
-                      <span> About</span>
-                    </Link> */}
                     <span className=" p-2 h-9 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
                       {isAuthenticated ? (
                         <button onClick={() => logmeout.logOut()}>
@@ -68,6 +52,15 @@ const HeadzLayout = ({ children }) => {
                         </Link>
                       )}
                     </span>
+                    <Link
+                      className="p-2 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700"
+                      to={routes.vaults()}
+                    >
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-100">
+                        <span className=" animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-100 opacity-75"></span>
+                      </span>
+                      <span> Vault</span>
+                    </Link>
 
                     <Link
                       className="p-2 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700"
@@ -76,7 +69,7 @@ const HeadzLayout = ({ children }) => {
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-100">
                         <span className=" animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-100 opacity-75"></span>
                       </span>
-                      <span> Contact</span>
+                      <span> Contacts</span>
                     </Link>
                   </div>
                 </li>
