@@ -1,7 +1,24 @@
 import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from '@redwoodjs/auth'
+import { useState, useEffect } from 'react'
 
 const HeadzLayout = ({ children }) => {
+  const date = new Date()
+  const [ti, setTi] = useState('')
+
+  {
+    date.toDateString()
+  }
+  {
+    date.toLocaleTimeString()
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTi(date.toLocaleTimeString())
+    }, 1000)
+  })
+
   const { isAuthenticated } = useAuth()
   const logmeout = useAuth()
 
@@ -75,6 +92,10 @@ const HeadzLayout = ({ children }) => {
                 </li>
               </ul>
             </nav>
+            <div className="p-2   bg-white-500"></div>
+            <div className="p-2  text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
+              {`${date.toDateString()}  ${ti}`}
+            </div>
           </div>
         </header>
       </div>
